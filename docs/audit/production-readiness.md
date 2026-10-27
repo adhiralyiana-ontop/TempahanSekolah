@@ -248,3 +248,7 @@ existing suites after the coordinated upgrade.
 
 The landing page can be reviewed as an explicitly non-operational prototype.
 **Do not launch the full PRD product or accept real orders/payments on this evidence.**
+
+Audit implementation commit: `6231c83d137e19399d13ce2ce66b05761c02097c`. The two corrected responsive-only checks
+passed on rerun. A separate direct check also accepted `first.last@example.com`.
+Hosted GitHub CI results remain unverified by this local audit.

@@ -1,6 +1,6 @@
 # TempahSekolah — actual file and symbol register
 
-Milestone 1 working tree, 27 October 2026. Implementation commit: **`92f1a710f72a916bda196a20f45f6915efa93798`**. Documentation-only publication updates follow this commit. No PR was created.
+Milestone 1 plus production-readiness audit, 27 October 2026. Implementation/audit commit: **`6231c83d137e19399d13ce2ce66b05761c02097c`**. Documentation-only reference updates follow this commit. No PR was created.
 Ranges below were read from the formatted files in this working tree; regenerate after edits.
 The uploaded plan is preserved in `docs/file-blueprint.v1.md`. Future blueprint paths
 without an entry below have not been implemented. No tenant schema or RLS tests exist yet.
