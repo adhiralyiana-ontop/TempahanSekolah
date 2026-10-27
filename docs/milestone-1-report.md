@@ -51,7 +51,7 @@ no email was sent and no paid service was used.
 - Loading and error components compile; delayed-loading/error-retry scenarios were
   not fault-injected. Automated axe checks do not establish full WCAG conformance;
   assistive-technology review, Firefox/WebKit and physical-device testing remain.
-- GitHub Actions is configured but has not been run on GitHub. No commit or push.
+- Implementation is recorded in Git commit `92f1a710f72a916bda196a20f45f6915efa93798`. GitHub Actions execution must be checked after upload; local test evidence above remains the verified result.
 - No security audit, load test, deployment or paid service activation. PRD G1–G5
   remain open; pricing, merchant and pilot decisions are unchanged.
 - npm reports ESLint 9 upstream end-of-support. It is kept in the supported peer
@@ -62,4 +62,5 @@ no email was sent and no paid service was used.
 See `README.md` for local commands, environment names and both browser test modes.
 Cloud onboarding's `install_script` and `start_skill` are saved separately as a
 configuration draft; saving does not apply runtime settings or publish a snapshot.
-The current files are uncommitted and no fresh-task snapshot restoration was tested.
+The implementation is committed. No fresh-task snapshot restoration was tested.
+GitHub publication is a separate action requested by the user after milestone completion.
