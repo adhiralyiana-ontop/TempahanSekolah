@@ -9,7 +9,7 @@ without an entry below have not been implemented. No tenant schema or RLS tests 
 | -------------------------------------------------------------------------------------------- | -------------------------------------------- | ------------ | ------------------------------------------------------------------- |
 | [src/app/layout.tsx](src/app/layout.tsx)                                                     | `RootLayout`                                 | 15–30        | Shared HTML, Bahasa Melayu metadata, header/footer and skip link    |
 | [src/app/page.tsx](src/app/page.tsx)                                                         | `Home`                                       | 83–282       | Landing sections, content and FAQ data                              |
-| [src/app/globals.css](src/app/globals.css)                                                   | `@theme / :root / component styles / @media` | 1–1388       | Design tokens, components and responsive/reduced-motion rules       |
+| [src/app/globals.css](src/app/globals.css)                                                   | `@theme / :root / component styles / @media` | 1–1395       | Design tokens, components and responsive/reduced-motion rules       |
 | [src/app/demo/page.tsx](src/app/demo/page.tsx)                                               | `DemoPage`                                   | 9–68         | Request-time contact configuration and honest unavailable state     |
 | [src/app/loading.tsx](src/app/loading.tsx)                                                   | `Loading`                                    | 1–8          | Route loading announcement and skeleton                             |
 | [src/app/error.tsx](src/app/error.tsx)                                                       | `ErrorPage`                                  | 2–12         | Sanitized route error and retry action                              |
@@ -19,10 +19,10 @@ without an entry below have not been implemented. No tenant schema or RLS tests 
 | [src/components/marketing/header.tsx](src/components/marketing/header.tsx)                   | `Header`                                     | 9–56         | Desktop navigation and mobile disclosure state                      |
 | [src/components/marketing/footer.tsx](src/components/marketing/footer.tsx)                   | `Footer`                                     | 3–24         | Footer navigation and development status                            |
 | [src/components/marketing/program-preview.tsx](src/components/marketing/program-preview.tsx) | `ProgramPreview`                             | 124–220      | Five selectable illustrative category examples; no checkout         |
-| [src/lib/demo-contact.ts](src/lib/demo-contact.ts)                                           | `getDemoContactHref`                         | 2–13         | Server-read single-mailbox validation and encoded mailto draft      |
+| [src/lib/demo-contact.ts](src/lib/demo-contact.ts)                                           | `buildDemoContactHref / getDemoContactHref`  | 2–30         | Server-read single-mailbox validation and encoded mailto draft      |
 | [tests/e2e/landing.spec.ts](tests/e2e/landing.spec.ts)                                       | `Playwright tests`                           | 1–140        | Rendering/axe, categories, keyboard/menu/FAQ, contact branches, 404 |
 | [playwright.config.ts](playwright.config.ts)                                                 | `defineConfig`                               | 1–29         | Production test server; desktop and 360px mobile; two workers       |
-| [next.config.ts](next.config.ts)                                                             | `nextConfig`                                 | 2–21         | Security headers and server configuration                           |
+| [next.config.ts](next.config.ts)                                                             | `nextConfig`                                 | 2–26         | Security headers and server configuration                           |
 
 ## Other files created
 
@@ -47,3 +47,12 @@ configured DEMO_CONTACT_EMAIL branches are exercised in separate runs. Loading/e
 fallbacks are built and typed but have not been verified with an injected runtime failure.
 Update this register with every implementation change; update the implementation commit when source files change.
 Auth, capacity, payment and fulfilment symbols from the approved blueprint remain unimplemented.
+
+## Production-readiness audit additions
+
+- `tests/unit/demo-contact.test.mjs`, lines 1–35: 15 mailbox validation cases.
+- `tests/e2e/security.spec.ts`, lines 1–78: 5 security/responsiveness tests, two viewports.
+- `docs/audit/production-readiness.md`: 12 severity-ranked findings and NO-GO evidence.
+- `docs/audit/npm-audit.json`: known-advisory snapshot.
+- `docs/audit/public-http-smoke.json`: local HTTP timing/error samples.
+- `package.json`: `test:unit` script; CI now checks unit tests and dependency audit.

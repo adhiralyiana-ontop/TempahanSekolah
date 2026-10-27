@@ -30,6 +30,7 @@ in `NEXT_PUBLIC_*` variables, source files or Git.
 ## Verify and run the production build
 
 ```sh
+npm run test:unit
 npm run lint
 npm run typecheck
 npm run build
@@ -63,8 +64,8 @@ The second run tests the configured contact branch with a non-delivering example
 address. Desktop and 360px mobile tests cover rendering, no horizontal overflow,
 client runtime errors, five category choices, keyboard skip link and FAQ,
 mobile navigation, demo availability/contact, 404 recovery and axe WCAG scans.
-Playwright's built-in assertions are the current test suite; there is no unrelated
-placeholder unit suite. Failure traces go to ignored `test-results/`.
+Run `npm run test:unit` for 15 mailbox validation and injection cases using Node.js 24. `npm test` runs browser tests separately. Security checks cover actual response
+headers, missing sensitive routes, unused query payloads and mobile-to-desktop resize. Failure traces go to ignored `test-results/`.
 
 ## Code map and specification
 
@@ -76,3 +77,6 @@ placeholder unit suite. Failure traces go to ignored `test-results/`.
 Public routes: `/` and `/demo`; unknown paths return a custom 404. Future domains,
 APIs, Supabase migrations and RLS tests should follow the approved blueprint only
 when their milestone is authorized. No deployment has been performed.
+
+See [production readiness audit](docs/audit/production-readiness.md) for the NO-GO
+recommendation, severity-ranked findings, fixes, evidence and unexecuted PRD tests.

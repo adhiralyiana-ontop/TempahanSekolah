@@ -1,0 +1,22 @@
+{
+  "kind": "local HTTP smoke only; not PRD API/checkout load validation",
+  "node": "v24.19.0",
+  "results": {
+    "/": {
+      "requests": 100,
+      "concurrency": 10,
+      "errors": 0,
+      "p50_ms": 56.75,
+      "p95_ms": 110.26,
+      "max_ms": 114.05
+    },
+    "/demo": {
+      "requests": 100,
+      "concurrency": 10,
+      "errors": 0,
+      "p50_ms": 153.11,
+      "p95_ms": 231.2,
+      "max_ms": 239.28
+    }
+  }
+}
