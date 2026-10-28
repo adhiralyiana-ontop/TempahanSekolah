@@ -8,3 +8,6 @@ test-results/
 .env*
 !.env.example
 .DS_Store
+
+# Local Netlify adapter outputs and site linkage
+.netlify/

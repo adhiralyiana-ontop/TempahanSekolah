@@ -80,3 +80,12 @@ when their milestone is authorized. No deployment has been performed.
 
 See [production readiness audit](docs/audit/production-readiness.md) for the NO-GO
 recommendation, severity-ranked findings, fixes, evidence and unexecuted PRD tests.
+
+## Netlify hosting
+
+`netlify.toml` declares the Next.js build, `.next` publish directory and the explicit
+`@netlify/plugin-nextjs` runtime. The runtime is pinned in the npm lockfile; no UI
+plugin search is required. See [Netlify runbook](docs/runbooks/netlify.md) for
+expected deployment logs and troubleshooting. No paid resource is provisioned by
+this configuration. Hosting the public pages does not implement the deferred
+booking, database or payment milestones.

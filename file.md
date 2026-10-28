@@ -56,3 +56,11 @@ Auth, capacity, payment and fulfilment symbols from the approved blueprint remai
 - `docs/audit/npm-audit.json`: known-advisory snapshot.
 - `docs/audit/public-http-smoke.json`: local HTTP timing/error samples.
 - `package.json`: `test:unit` script; CI now checks unit tests and dependency audit.
+
+## Netlify hosting correction — 28 October 2026
+
+- `netlify.toml`: explicit build command, publish directory, Node 24 and Next.js runtime plugin.
+- `package.json`, `package-lock.json`: pinned `@netlify/plugin-nextjs` 5.16.4.
+- `.gitignore`, `eslint.config.mjs`: exclude generated `.netlify` runtime/build outputs.
+- `docs/runbooks/netlify.md`, `README.md`: deployment evidence and user steps.
+- No application routes, database schema, booking or payment behaviour changed.
